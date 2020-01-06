@@ -1,0 +1,14 @@
+#backgroundStep4 {
+  background-image: url(../../../../pics/etape1-05.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 450px;
+}
+
+.listDedication {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: #64bfed;
+  text-align: right;
+  margin-top: 10px;
+}

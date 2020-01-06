@@ -1,0 +1,16 @@
+.listFormat{
+  text-align: center;
+}
+
+.blockMenu .cards {
+  text-align: center;
+}
+
+.blockMenu .imgcard {
+  width: 320px;
+  align-items:center;
+}
+
+.blockMenu .customCard {
+  align-items: center;
+}

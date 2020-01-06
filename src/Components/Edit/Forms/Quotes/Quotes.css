@@ -1,0 +1,18 @@
+#backgroundStep6 {
+  background-image: url(../../../../pics/etape1-06.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 450px;
+}
+
+.quote {
+  font-style: italic;
+}
+
+.listQuotes{
+  text-align: right;
+  margin-top: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: #64bfed;
+}

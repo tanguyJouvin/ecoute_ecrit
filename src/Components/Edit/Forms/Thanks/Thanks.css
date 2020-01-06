@@ -1,0 +1,12 @@
+#backgroundStep7 {
+  background-image: url(../../../../pics/etape1-07.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 450px;
+}
+
+.textThanks {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}

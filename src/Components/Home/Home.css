@@ -1,0 +1,94 @@
+#backgroundHome {
+  background-image: url(../../pics/bgIndex85.png);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 60%;
+  width: 100vw;
+}
+
+.Home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align:right;
+  height:100vh;
+  padding-left:50%;
+  padding-top:10%;
+}
+
+.Home p {
+  width:600px;
+}
+
+.screenTooLittle {
+  text-align:right;
+  height:87.65vh;
+  width:100vh;
+  background-image: url(../../pics/bgIndex85.png);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  width: 100vw;
+}
+
+.screenCard {
+  opacity:0.8;
+}
+
+.screen {
+  color : #E64190 !important;
+  font-weight: bold;
+}
+
+.button {
+    width: 250px;
+}
+
+.content {
+  text-align: center;
+}
+
+.typewrite {
+  border-right: 2px solid black;
+  line-height: 1.15;
+  font-size: 52px;
+  color :  #22404d;
+  font-family: 'Cookie', cursive;
+}
+
+.typewrite2 {
+  border-right: 2px solid black;
+  line-height: 1.15;
+  font-family: 'Lato', sans-serif;
+  color: #15272f;
+  font-size: 18px;
+}
+
+.anim-typewrite {
+  animation: blinkTextCursor 500ms infinite normal;
+}
+
+@keyframes blinkTextCursor{
+  from{border-right-color: black;}
+  to{border-right-color: transparent;}
+}
+
+.homeText {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  color: #15272f;
+  font-size: 18px;
+}
+
+.pinkHomeButton{
+  background-color:#e74291 !important;
+  color:white !important;
+  border-radius:24px !important;
+  box-shadow: none !important;
+  text-transform: uppercase;
+  font-size: 24px;
+  width:509px;
+  height:49px;
+  font-family: 'Lato black', sans-serif;
+  padding:0 !important;
+}

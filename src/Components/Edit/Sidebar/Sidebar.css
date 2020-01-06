@@ -1,0 +1,191 @@
+.table {
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  display:table
+}
+
+th {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: transparent !important;
+  border-radius: 0 29px 29px 0 !important;
+  height: 58px;
+}
+
+.listPartBookSidebar {
+ background-color: #E64190;
+}
+
+.activeAuthor {
+ background-color: #E64190 !important;
+}
+
+.validateAuthor {
+ background-color: #E64190 !important;
+ opacity: 0.8;
+}
+
+.activeAuthor:hover, .validateAuthor:hover{
+ color: #E64190;
+ box-shadow: 0 0 0 2px #E64190 inset !important;
+ border-radius:0 29px 29px 0 !important;
+ background-color: #fff !important;
+}
+
+.colorTitle {
+ background-color: #D5D5D5;
+}
+
+.activeTitle {
+ background-color: #B2CD3C !important;
+}
+
+.validateTitle {
+ background-color: #B2CD3C !important;
+ opacity: 0.8;
+}
+
+.colorTitle:hover, .activeTitle:hover, .validateTitle:hover{
+ color: #B2CD3C;
+ background-color: #fff !important;
+ box-shadow: 0 0 0 2px #B2CD3C inset !important;
+ border-radius:0 29px 29px 0 !important;
+}
+
+.colorSubTitle {
+ background-color: #C8C8C8;
+}
+
+.activeSubtitle {
+ background-color: #28B7E9 !important;
+}
+
+.validateSubtitle {
+ background-color: #28B7E9 !important;
+ opacity: 0.8;
+}
+
+.colorSubTitle:hover, .activeSubtitle:hover, .validateSubtitle:hover{
+ color: #28B7E9;
+ background-color: #fff !important;
+ box-shadow: 0 0 0 2px #28B7E9 inset !important;
+ border-radius:0 29px 29px 0 !important;
+}
+
+.colorOthersBooks {
+ background-color: #ACABAB;
+}
+
+.activeOthersBooks {
+ background-color: #F7BA1C !important;
+}
+
+.validateOthersBooks {
+ background-color: #F7BA1C !important;
+ opacity: 0.8;
+}
+
+.colorOthersBooks:hover, .activeOthersBooks:hover, .validateOthersBooks:hover{
+ color: #F7BA1C;
+ background-color: #fff !important;
+ box-shadow: 0 0 0 2px #F7BA1C inset !important;
+ border-radius:0 29px 29px 0 !important;
+}
+
+.colorDedication {
+ background-color: #D6D6D6;
+}
+
+.activeDedication {
+ background-color: #F08121 !important;
+}
+
+.validateDedication {
+ background-color: #F08121 !important;
+ opacity: 0.8;
+}
+
+.colorDedication:hover, .activeDedication:hover, .validateDedication:hover{
+ color: #F08121;
+ background-color: #fff !important;
+ box-shadow: 0 0 0 2px #F08121 inset !important;
+ border-radius:0 29px 29px 0 !important;
+}
+
+.colorQuotes {
+ background-color: #B6B5B5;
+}
+
+.activeQuotes {
+ background-color: #BE186D !important;
+}
+
+.validateQuotes {
+ background-color: #BE186D !important;
+ opacity: 0.8;
+}
+
+.colorQuotes:hover, .activeQuotes:hover, .validateQuotes:hover{
+ color: #BE186D;
+ background-color: #fff !important;
+ box-shadow: 0 0 0 2px #BE186D inset !important;
+ border-radius:0 29px 29px 0 !important;
+}
+
+.colorThanks {
+ background-color: #8C8B8B;
+}
+
+.activeThanks {
+ background-color: #2299D7 !important;
+}
+
+.validateThanks {
+ background-color: #2299D7 !important;
+ opacity: 0.8;
+}
+
+.colorThanks:hover, .activeThanks:hover, .validateThanks:hover{
+ color: #2299D7;
+ background-color: #fff !important;
+ box-shadow: 0 0 0 2px #2299D7 inset !important;
+ border-radius:0 29px 29px 0 !important;
+}
+
+.colorPreface {
+ background-color: #7A7A78;
+}
+
+.activePreface {
+ background-color: #67B648 !important;
+}
+
+.validatePreface {
+ background-color: #67B648 !important;
+ opacity: 0.8;
+}
+
+.colorPreface:hover, .activePreface:hover, .validatePreface:hover{
+ color: #67B648;
+ background-color: #fff !important;
+ box-shadow: 0 0 0 2px #67B648 inset !important;
+ border-radius:0 29px 29px 0 !important;
+}
+
+.etape1{
+ background-color: #5cbbf1 !important;
+ opacity: 0.8;
+}
+
+.etape2{
+  background-color: #afed59 !important;
+  opacity: 0.8;
+}
+
+.etape3{
+  background-color: #f52ba5 !important;
+  opacity: 0.8;
+}

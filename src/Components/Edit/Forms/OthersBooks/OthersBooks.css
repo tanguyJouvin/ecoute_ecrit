@@ -1,0 +1,32 @@
+#backgroundStep04 {
+  background-image: url(../../../../pics/etape1-04.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 450px;
+}
+
+.fat-add {
+  color:white;
+}
+
+.listBooks{
+  text-align: right;
+  margin-top: 10px;
+}
+
+.bookName {
+  font-weight: bold;
+}
+
+.BOOK {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: #64bfed;
+  font-weight: bold;
+}
+
+.editionEtYear {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: #64bfed;
+}

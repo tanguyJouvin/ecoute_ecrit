@@ -1,0 +1,48 @@
+{
+  "homepage": "https://editeonline.fr",
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "base-64": "^0.1.0",
+    "bootstrap": "^4.3.1",
+    "classnames": "^2.2.6",
+    "core-js": "^3.6.1",
+    "fs": "0.0.1-security",
+    "glamor": "^2.20.40",
+    "jspdf": "^1.5.3",
+    "pdfmake": "^0.1.57",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-native-elements": "^1.1.0",
+    "react-redux": "^7.0.3",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.0.1",
+    "react-toastify": "^5.2.1",
+    "react-toasts": "^3.0.3",
+    "reactstrap": "^8.0.0",
+    "redux": "^4.0.1",
+    "redux-localstorage-simple": "^2.1.6",
+    "regenerator-runtime": "^0.13.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {}
+}
