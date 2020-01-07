@@ -5,7 +5,7 @@ import { Button } from 'reactstrap';
 import switchView from '../../Action/viewAction';
 import './Congrats2.css';
 
-function Congrats1(props) {
+function Congrats2(props) {
   const nextStep = () => {
     props.dispatch(switchView('Bookbody'));
   };
@@ -34,7 +34,7 @@ function Congrats1(props) {
   );
 }
 
-export default connect()(Congrats1);
+export default connect()(Congrats2);
 
 Congrats1.propTypes = {
   dispatch: PropTypes.func,

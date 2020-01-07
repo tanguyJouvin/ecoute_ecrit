@@ -92,7 +92,7 @@ function ModifBookBody(props) {
   useEffect(() => {
     setListPartBook(body);
     setNavPills(index);
-  }, []);
+  }, [body, index]);
 
   useEffect(() => {
     setNavPills(convertTypeToNumber(body[index].type));

@@ -32,7 +32,6 @@ function Forms({ view }) {
       {view === 'Bookbody' && <BookBody />}
       {view === 'ModifBookBody' && <ModifBookBody />}
       {view === 'ChoicePdf' && <ChoicePdf />}
-
     </div>
   );
 }
