@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Button } from 'reactstrap';
 import switchView from '../../Action/viewAction';
-import './Congrats2.css';
+// import './Congrats1.css';
 
 function Congrats2(props) {
   const nextStep = () => {
@@ -36,10 +36,10 @@ function Congrats2(props) {
 
 export default connect()(Congrats2);
 
-Congrats1.propTypes = {
+Congrats2.propTypes = {
   dispatch: PropTypes.func,
 };
 
-Congrats1.defaultProps = {
+Congrats2.defaultProps = {
   dispatch: null,
 };

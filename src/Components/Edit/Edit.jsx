@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 import Sidebar from './Sidebar/Sidebar';
 import Forms from './Forms/Forms';
-import './Edit.css';
+
 
 function Edit() {
   return (
