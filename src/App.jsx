@@ -9,6 +9,7 @@ import Forms from './Components/Edit/Forms/Forms';
 import Register from './Components/Register/Register';
 import 'react-toastify/dist/ReactToastify.css'; // Toaster
 import './App.css';
+import Login from './Components/Login/Login';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path={`${process.env.PUBLIC_URL}/menu`} component={Menu} />
         <Route path={`${process.env.PUBLIC_URL}/form`} component={Forms} />
         <Route path={`${process.env.PUBLIC_URL}/register`} component={Register} />
+        <Route path={`${process.env.PUBLIC_URL}/login`} component={Login} />
       </Switch>
     </div>
   );

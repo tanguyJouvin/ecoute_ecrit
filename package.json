@@ -15,6 +15,7 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "glamor": "^2.20.40",
+    "jsonwebtoken": "^8.5.1",
     "jspdf": "^1.5.3",
     "mysql": "^2.18.0",
     "pdfmake": "^0.1.57",

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Register  from '../Register/Register'
 import {
   UncontrolledCollapse,
   NavbarBrand,
@@ -57,9 +56,16 @@ function NavigationBar() {
           </Row>
         </div>
         <Nav className="ml-lg-auto">
-          <NavItem>
+        <NavItem>
             <NavLink href="#" onClick={e => e.preventDefault()}>
             <Link to={`${process.env.PUBLIC_URL}/register`} > 
+              Enregistrez-vous
+            </Link>
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#" onClick={e => e.preventDefault()}>
+            <Link to={`${process.env.PUBLIC_URL}/login`} > 
               Identifiez-vous
             </Link>
             </NavLink>
@@ -70,7 +76,7 @@ function NavigationBar() {
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#" onClick={e => e.preventDefault()}>
+            <NavLink a href="ecoute-ecrit.fr/index.html" onClick={e => e.preventDefault()}>
               A propos
             </NavLink>
           </NavItem>

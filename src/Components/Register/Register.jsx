@@ -1,7 +1,16 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import './Register.css';
+import { toast } from 'react-toastify';
+import { connectedToasterStyle } from '../../toasterConfig';
+import { Input, Button } from 'reactstrap';
+
+toast.configure(
+  {
+    autoClose: 8000,
+    draggable: false,
+  },
+);
 
 function Register() {
 
@@ -11,7 +20,7 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [retypePassword, setRetypePassword] = useState('');
-  const [redirect, setRedirect] = useState('');
+  const [redirect, setRedirect] = useState(false);
 
   // `ec_firstname` VARCHAR(255) NOT NULL,
   // `ec_lastname` VARCHAR(255) NOT NULL,
@@ -20,7 +29,7 @@ function Register() {
   // `ec_password` VARCHAR(255) NOT NULL
 
   const submitForm = () => {
-    axios.post('http://localhost:8000/register',{
+    axios.post('http://localhost:5000/register',{
       firstname : firstname,
       lastname :lastname,
       address : addressName,
@@ -28,82 +37,92 @@ function Register() {
       password : password
     })
     .then((result)=> {
-      if(result.status === 200) {
-        setRedirect(true);
+      if(result.status === 200){
+        setRedirect(true)
+        toast.error("Vous vous êtes enregistrés", connectedToasterStyle);
       }
-      console.log('resultat', result);
-    })
-     .catch(error => console.log(error))
+      console.log(result);
+      
+    }) 
   };
 
   return(
-      <form className="mt-5">
-      {redirect && <Redirect to="/login"/>}
-        <div className="form-row">
-          <div className="form-group col-md-6">
-            <label htmlFor="inputFirstName4">FirstName</label>
-            <input
-              type="text"
-              className="form-control"
-              value={firstname}
-              onChange={(event) => setFirstname(event.target.value)}
-              id="inputFirstName4"
-              placeholder="Firstname"
-            />
+    <div className="inputContainer">
+      <div className="container">
+        <form className="mt-5">
+        {redirect && <Redirect to="/login" />}
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <label htmlFor="inputFirstName4">Prénom</label>
+              <Input
+                className="form-control-alternative input"
+                id="inputFirstName4"
+                placeholder="Prénom"
+                type="text"
+                value={firstname}
+                onChange={event => setFirstname(event.target.value)}
+              />
+            </div>
+            <div className="form-group col-md-6">
+              <label htmlFor="inputLastName4">Nom</label>
+              <Input
+                className="form-control-alternative input"
+                id="inputLastName4"
+                placeholder="Nom"
+                type="text"
+                value={lastname}
+                onChange={event => setLastname(event.target.value)}
+              />
+            </div>
+            <div className="form-group col-md-6">
+              <label htmlFor="inputEmail4">Email</label>
+              <Input
+                className="form-control-alternative input"
+                id="inputEmail4"
+                placeholder="Email"
+                type="email"
+                value={email}
+                onChange={event => setEmail(event.target.value)}
+              />
+            </div>
           </div>
-          <div className="form-group col-md-6">
-            <label htmlFor="inputLastName4">Lastname</label>
-            <input
-              type="text"
-              className="form-control"
-              value={lastname}
-              onChange={(event) => setLastname(event.target.value)}
-              id="inputLastName4"
-              placeholder="Lastname"
-            />
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <label htmlFor="inputPassword4">Password</label>
+              <Input
+                className="form-control-alternative input"
+                id="inputPassword4"
+                placeholder="password"
+                autoComplete="password"
+                type="password"
+                value={password}
+                onChange={event => setPassword(event.target.value)}
+              />
+            </div>
+            <div className="form-group col-md-6">
+              <label htmlFor="inputRetypePassword4">Retype Password</label>
+              <Input
+                className="form-control-alternative input"
+                id="inputRetypePassword4"
+                placeholder="password"
+                autoComplete="password"
+                type="password"
+                value={retypePassword}
+                onChange={event => setRetypePassword(event.target.value)}
+              />
+            </div>
+            {password !== retypePassword && <p className="text-danger">Invalid password</p>}
           </div>
-          <div className="form-group col-md-6">
-            <label htmlFor="inputEmail4">Email</label>
-            <input
-              type="email"
-              className="form-control"
-              value={email} onChange={(event) => setEmail(event.target.value)}
-              id="inputEmail4"
-              placeholder="Email"
-            />
+          <div className="form-group">
+            <label htmlFor="inputAddress">Adresse 1</label>
+            <Input type="text" className="form-control-alternative input" value={addressName} onChange={(event) => setAddressName(event.target.value)} placeholder="votre adresse" />
           </div>
-        </div>
-        <div className="form-row">
-          <div className="form-group col-md-6">
-            <label htmlFor="inputPassword4">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              id="inputPassword4"
-              placeholder="password"
-            />
+          <div className="buttonLign1">
+            <Button type="button" className="pinkButton" onClick={submitForm}>Enregistrez</Button>
           </div>
-          <div className="form-group col-md-6">
-            <label htmlFor="inputRetypePassword4">Retype Password</label>
-            <input
-              type="password"
-              className="form-control"
-              value={retypePassword}
-              onChange={(event) => setRetypePassword(event.target.value)}
-              id="inputRetypePassword4"
-              placeholder="password"
-            />
-          </div>
-          {password !== retypePassword && <p className="text-danger">Invalid password</p>}
-        </div>
-        <div className="form-group">
-          <label htmlFor="inputAddress">Adresse 1</label>
-          <input type="text" className="form-control" value={addressName} onChange={(event) => setAddressName(event.target.value)} placeholder="adress" />
-        </div>
-        <button type="submit" className="submitButton" onClick={submitForm}>submit</button>
-      </form>
+        </form>
+      </div>
+    </div>
   )
 }
 
