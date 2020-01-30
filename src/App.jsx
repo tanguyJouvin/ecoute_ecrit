@@ -6,6 +6,7 @@ import Home from './Components/Home/Home';
 import Edit from './Components/Edit/Edit';
 import Menu from './Components/Menu/Menu';
 import Forms from './Components/Edit/Forms/Forms';
+import Register from './Components/Register/Register';
 import 'react-toastify/dist/ReactToastify.css'; // Toaster
 import './App.css';
 
@@ -20,6 +21,7 @@ function App() {
         <Route path={`${process.env.PUBLIC_URL}/edit`} component={Edit} />
         <Route path={`${process.env.PUBLIC_URL}/menu`} component={Menu} />
         <Route path={`${process.env.PUBLIC_URL}/form`} component={Forms} />
+        <Route path={`${process.env.PUBLIC_URL}/register`} component={Register} />
       </Switch>
     </div>
   );

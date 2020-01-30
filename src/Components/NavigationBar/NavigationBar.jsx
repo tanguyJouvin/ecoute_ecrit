@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Register  from '../Register/Register'
 import {
   UncontrolledCollapse,
   NavbarBrand,
@@ -58,7 +59,9 @@ function NavigationBar() {
         <Nav className="ml-lg-auto">
           <NavItem>
             <NavLink href="#" onClick={e => e.preventDefault()}>
+            <Link to={`${process.env.PUBLIC_URL}/register`} > 
               Identifiez-vous
+            </Link>
             </NavLink>
           </NavItem>
           <NavItem>

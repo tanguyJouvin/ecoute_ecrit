@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.2",
     "base-64": "^0.1.0",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "core-js": "^3.6.1",
@@ -29,7 +31,9 @@
     "reactstrap": "^8.0.0",
     "redux": "^4.0.1",
     "redux-localstorage-simple": "^2.1.6",
-    "regenerator-runtime": "^0.13.3"
+    "regenerator-runtime": "^0.13.3",
+    "sha256": "^0.2.0",
+    "sql": "^0.78.0"
   },
   "scripts": {
     "start": "react-scripts start",
