@@ -23,7 +23,7 @@ function Register() {
   const [redirect, setRedirect] = useState(false);
 
   const submitForm = () => {
-    axios.post('http://localhost:5000/register',{
+    axios.post('http://localhost:5000/app/register/',{
       firstname : firstname,
       lastname :lastname,
       address : addressName,

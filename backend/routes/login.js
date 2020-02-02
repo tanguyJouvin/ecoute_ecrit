@@ -10,12 +10,19 @@ router.get('/', (req, res)=>{
   res.send('you\'re logged!');
 });
 
-//login
+router.get('/:id', (req, res) => {
+  connection.query(`SELECT * FROM ec_users 
+    WHERE ec_id = ?`, [req.params.id], (err, result) => {
+    if (err) { res.sendStatus(400) };
+    res.send(result);
+  });
+});
+
 router.post('/', (req,res) => {
   connection.query(
     `SELECT * FROM ec_users 
-    WHERE ec_email = "${req.body.email}" 
-    and ec_password = "${shajs('sha256').update(req.body.password).digest('hex')}"`, (err, result) => {
+    WHERE ec_email = ?
+    and ec_password = "${shajs('sha256').update(req.body.password).digest('hex')}"`,[req.body.email], (err, result) => {
       if(err) throw err;
       if(result.length <= 0){
         res.send({code: 401});

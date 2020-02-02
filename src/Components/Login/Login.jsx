@@ -21,7 +21,7 @@ function Login() {
   const [redirect, setRedirect] = useState(false);
 
   const submitForm = () => {
-    axios.post('http://localhost:5000/login', login)
+    axios.post('http://localhost:5000/app/login/', login)
     .then((result) => {
       if(result.data.code === 200) {
         localStorage.setItem('token', result.data.token);
