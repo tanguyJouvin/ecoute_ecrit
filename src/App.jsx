@@ -7,9 +7,9 @@ import Edit from './Components/Edit/Edit';
 import Menu from './Components/Menu/Menu';
 import Forms from './Components/Edit/Forms/Forms';
 import Register from './Components/Register/Register';
+import Login from './Components/Login/Login';
 import 'react-toastify/dist/ReactToastify.css'; // Toaster
 import './App.css';
-import Login from './Components/Login/Login';
 
 
 function App() {

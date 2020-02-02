@@ -22,12 +22,6 @@ function Register() {
   const [retypePassword, setRetypePassword] = useState('');
   const [redirect, setRedirect] = useState(false);
 
-  // `ec_firstname` VARCHAR(255) NOT NULL,
-  // `ec_lastname` VARCHAR(255) NOT NULL,
-  // `ec_address` VARCHAR(255) NOT NULL,
-  // `ec_email` VARCHAR(255) UNIQUE NOT NULL,
-  // `ec_password` VARCHAR(255) NOT NULL
-
   const submitForm = () => {
     axios.post('http://localhost:5000/register',{
       firstname : firstname,

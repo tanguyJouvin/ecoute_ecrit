@@ -1,7 +1,9 @@
 import React, {useState } from 'react';
+import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { errorToasterStyle, connectedToasterStyle } from '../../toasterConfig';
-import axios from 'axios';
+
 import { Input, Button } from 'reactstrap';
 
 toast.configure(
@@ -15,7 +17,8 @@ function Login() {
   const [login, setLogin] = useState({
     email: "",
     password: ""
-  })
+  });
+  const [redirect, setRedirect] = useState(false);
 
   const submitForm = () => {
     axios.post('http://localhost:5000/login', login)
@@ -23,6 +26,7 @@ function Login() {
       if(result.data.code === 200) {
         localStorage.setItem('token', result.data.token);
         toast.info("vous êtes connectés à votre compte", connectedToasterStyle);
+        setRedirect(true)
       } else {
         toast.error("Il y a une erreur dans les identifiants", errorToasterStyle);
       }
@@ -33,6 +37,7 @@ function Login() {
     <div className="inputContainer">
       <div className="container">
       <form className="mt-5">
+      {redirect && <Redirect to="/menu" />}
           <div className="form-row">
             <div className="form-group col-md-6">
               <label htmlFor="inputEmail4">Email</label>

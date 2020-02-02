@@ -27,7 +27,10 @@ function Menu() {
                 width="100%"
                 src={illusCorr}
               />
-              <Button className="corrigerButton mt-4" type="button">
+              <Button
+                className="corrigerButton mt-4"
+                type="button"
+              >
                 Corriger mon livre
               </Button>
             </Card>
