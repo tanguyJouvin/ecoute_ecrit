@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const connection = require('./conf');
 const app = require('./routes/index');
 
 const api = express();
@@ -12,11 +11,6 @@ api.use(cors());
 api.use(express.urlencoded({extended: true}));
 api.use(express.json());
 api.use('/app', app);
-
-connection.connect((err) => {
-  if(err) throw err;
-  console.log('MySQL is connected !');
-});
 
 api.listen(port,(err) => {
   if(err) throw err;

@@ -1,10 +1,15 @@
 // const mysql = require('mysql');
+
 // const connection = mysql.createConnection({
 //   host: 'localhost',
 //   user: 'bar',
 //   password: 'baz',
-//   database: 'foo',
+//   database: 'ecoute_ecrit',
 //   multipleStatements: true
+// });
+// connection.connect((err) => {
+//   if(err) throw err;
+//   console.log('MySQL is connected !');
 // });
 // module.exports = connection;
 
