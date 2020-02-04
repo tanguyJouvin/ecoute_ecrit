@@ -22,12 +22,12 @@ router.post('/', (req,res) => {
   const {email, password } = req.body
 
   if(!email || !password) {
-    res.status(400).send("missing input field")
+    res.status(400).send("missing inputs fields")
   } else {
     connection.query(
       `SELECT * FROM ec_users 
       WHERE ec_email = ?
-      and ec_password = "${shajs('sha256').update(password).digest('hex')}"`,[req.body.email], (err, rows, fields) => {
+      and ec_password = "${shajs('sha256').update(password).digest('hex')}"`,[email], (err, rows, fields) => {
         if(err) throw err;
         if(rows.length <= 0){
           res.send({code: 401});
