@@ -3,7 +3,12 @@ const connection = require('../conf');
 const shajs = require('sha.js');
 const router = express.Router();
 
-router.get('/', (req, res) => {
+const isAuthenticated = (req, res, next) => {
+  console.log(req.headers);
+  next();
+};
+
+router.get('/', isAuthenticated, (req, res) => {
   res.send('you\'re register!');
 });
 
@@ -18,7 +23,7 @@ router.get('/:id', (req, res) => {
 //création de l'utilisateur et vérification de l'existence de l'email
 router.post('/', (req, res) => {
   const { firstname, lastname, address, email, password } = req.body;
-  
+
   if(!firstname || !lastname || !address || !email || !password) {
     res.status(400).send('miss input field');  
   } else {

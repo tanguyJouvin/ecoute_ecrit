@@ -30,19 +30,20 @@ router.post('/', (req,res) => {
       and ec_password = "${shajs('sha256').update(password).digest('hex')}"`,[email], (err, rows, fields) => {
         if(err) throw err;
         if(rows.length <= 0){
-          res.send({code: 401});
+          res.status(403).send('invalid mail/password');
         } else {
-          res.send({
-            token : jwt.sign({
-              userId: rows[0].email
-            }, pkey, {
-              expiresIn: '3d'
-            }),
-            code: 200
+          res.status(200).send({
+            token : generateToken(rows[0].email),
+            userId: rows[0]
           });
         }
       })
   }
 });
-
+const generateToken = email => {
+  return jwt.sign({
+    expiresIn: '3d',
+    data: { email },
+  }, pkey)
+}
 module.exports = router;
