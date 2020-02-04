@@ -19,10 +19,7 @@ connection.connect((err) => {
 });
 
 api.listen(port,(err) => {
-  if(err) {
-    console.log(err);
-  } else {
-    console.log(`api is running on the ${port}`)
-  }
+  if(err) throw err;
+  console.log(`api is running on the ${port}`)
 });
 
