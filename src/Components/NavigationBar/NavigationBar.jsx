@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import UserCTX from '../../Context/UserCTX';
 import {
   UncontrolledCollapse,
   NavbarBrand,
@@ -13,6 +14,13 @@ import {
 import './NavigationBar.css';
 
 function NavigationBar() {
+
+  const user = useContext(UserCTX);
+
+  const disconnect = () => {
+    localStorage.removeItem('token');
+  }
+
   return (
     <Navbar className="navigation navbar-horizontal" expand="lg">
       <NavbarBrand>
@@ -56,18 +64,25 @@ function NavigationBar() {
           </Row>
         </div>
         <Nav className="ml-lg-auto">
-        <NavItem>
-            <NavLink href="#" onClick={e => e.preventDefault()}>
-            <Link to={`${process.env.PUBLIC_URL}/register`} > 
-              Enregistrez-vous
-            </Link>
+          <NavItem>
+            <NavLink onClick={e => e.preventDefault()}>
+              <Link to={`${process.env.PUBLIC_URL}/register`} > 
+                Enregistrez-vous
+              </Link>
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#" onClick={e => e.preventDefault()}>
-            <Link to={`${process.env.PUBLIC_URL}/login`} > 
-              Identifiez-vous
-            </Link>
+            <NavLink onClick={e => e.preventDefault()}>
+              <Link to={`${process.env.PUBLIC_URL}/login`} > 
+                Identifiez-vous
+              </Link>
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink onClick={disconnect}>
+              <Link to={`${process.env.PUBLIC_URL}/menu`} > 
+                Déconnectez-vous
+              </Link>
             </NavLink>
           </NavItem>
           <NavItem>

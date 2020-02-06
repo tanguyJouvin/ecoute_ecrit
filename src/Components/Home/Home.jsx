@@ -36,7 +36,7 @@ function Home() {
   return (
     <div>
     {width>=1335 ?
-    <div container className="inputContainer" id="backgroundHome">
+    <div className="inputContainer" id="backgroundHome">
           
       <div className="Home">
         <p className="content">
@@ -49,7 +49,7 @@ function Home() {
       </div>
     </div>
           :
-      <div container className="screenTooLittle">
+      <div className="screenTooLittle">
         <Container>
           <p className="content">
             <span className="typewrite anim-typewrite js-typewrite">{text}</span>

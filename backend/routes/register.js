@@ -1,15 +1,38 @@
 const express = require('express');
 const connection = require('../conf');
 const shajs = require('sha.js');
+const jwt = require('jsonwebtoken');
+const pkey = require('../pkey');
+
 const router = express.Router();
 
 const isAuthenticated = (req, res, next) => {
-  console.log(req.headers);
-  next();
+  if(typeof req.headers.authorization !== 'undefined'){
+    const token = req.headers.authorization.split(' ')[1];
+    jwt.verify(token, pkey, (err, user) => {
+      if(err) {
+        res.status(403).send('Not Authorized');
+      }
+      req.userEmail = user.data.email
+      return next();
+    })
+  } else {
+    res.status(403).send('Not Authorized');
+  }
 };
 
 router.get('/', isAuthenticated, (req, res) => {
-  res.send('you\'re register!');
+  connection.query(`SELECT ec_firstname, ec_lastname, ec_address, ec_email FROM ec_users 
+    WHERE ec_email = "${req.userEmail}"`, (err, rows) => {
+      if(err) {
+        res.sendStatus(500);
+      } 
+      if(rows.length > 0) {
+        res.status(200).json(rows[0]);
+      } else {
+        res.status(404).send('Not Found');
+      }
+  });
 });
 
 router.get('/:id', (req, res) => {
@@ -35,7 +58,7 @@ router.post('/', (req, res) => {
         throw err
       } else {
         if(rows.length > 0) {
-          res.status(400).send("email akready used")
+          res.status(400).send("email already used")
         } else {
           connection.query(
             `INSERT INTO ec_users (ec_firstname, ec_lastname, ec_address, ec_email, ec_password)

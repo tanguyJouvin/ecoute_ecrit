@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { connectedToasterStyle } from '../../toasterConfig';
+import { connectedToasterStyle, errorToasterStyle } from '../../toasterConfig';
 import { Input, Button } from 'reactstrap';
 
 toast.configure(
@@ -32,11 +32,13 @@ function Register() {
     })
     .then((result)=> {
       if(result.status === 200){
+        console.log(result);
+        
         setRedirect(true)
-        toast.error("Vous vous êtes enregistrés", connectedToasterStyle);
+        toast.info("Vous vous êtes enregistrés", connectedToasterStyle);
+      } else  {
+        toast.error("cet email existe déjà", errorToasterStyle);
       }
-      console.log(result);
-      
     }) 
   };
 

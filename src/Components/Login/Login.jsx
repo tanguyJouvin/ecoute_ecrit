@@ -14,16 +14,18 @@ toast.configure(
 );
 
 function Login() {
-  const [login, setLogin] = useState({
+  const [form, setForm] = useState({
     email: "",
     password: ""
   });
+  const [login, setLogin] = useState(null);
   const [redirect, setRedirect] = useState(false);
 
   const submitForm = () => {
-    axios.post('http://localhost:5000/app/login/', login)
-    .then((result) => {
-      if(result.data.code === 200) {
+    axios.post('http://localhost:5000/app/login/', form)
+    .then(result => {
+      if(result.status === 200) {
+        setLogin(result.data.userId);
         localStorage.setItem('token', result.data.token);
         toast.info("vous êtes connectés à votre compte", connectedToasterStyle);
         setRedirect(true)
@@ -31,7 +33,7 @@ function Login() {
         toast.error("Il y a une erreur dans les identifiants", errorToasterStyle);
       }
     })
-  }
+  };
 
   return(
     <div className="inputContainer">
@@ -46,8 +48,8 @@ function Login() {
                 id="inputEmail4"
                 placeholder="Email"
                 type="email"
-                value={login.email}
-                onChange={event => setLogin({...login, email: event.target.value})}
+                value={form.email}
+                onChange={event => setForm({...form, email: event.target.value})}
               />
             </div>
           </div>
@@ -60,14 +62,14 @@ function Login() {
                 placeholder="password"
                 autoComplete="password"
                 type="password"
-                value={login.password}
-                onChange={event => setLogin({...login, password: event.target.value})}
+                value={form.password}
+                onChange={event => setForm({...form, password: event.target.value})}
               />
             </div>
           </div>
           <div className="buttonLign1">
             <Button type="button" className="pinkButton" 
-            disabled={(login.email ==="" && login.password === "") ? true : false}
+            disabled={(form.email ==="" && form.password === "") ? true : false}
             onClick={submitForm}>submit</Button>
           </div>
         </form>
