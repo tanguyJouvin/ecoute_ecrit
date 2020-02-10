@@ -25,7 +25,7 @@ function BookBody(props) {
   const { body } = props;
 
   useEffect(() => {
-    setListPartBook(props.body);
+    setListPartBook(props.body);  
   }, []);
 
   useEffect(() => {

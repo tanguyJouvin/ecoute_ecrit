@@ -52,7 +52,7 @@ router.put('/:id',(req, res) => {
 
 //suppression du contenu de bookshead
 router.delete('/:id',(req, res) => {
-  connection.query(`DELETE FROM ec_bookshead WHERE ecb_id = ? `, [req.params.id], (err, rows, fields) => {
+  connection.query(`DELETE * FROM ec_bookshead WHERE ecb_id = ? `, [req.params.id], (err, rows, fields) => {
     if(err) throw err;
     res.sendStatus(200);
   });
